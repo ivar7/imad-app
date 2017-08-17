@@ -51,7 +51,6 @@ function createTemplate(data){
              </div>
              <div>
              ${content}
-               </p>
              </div>
              </div>
         </body>
