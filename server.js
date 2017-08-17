@@ -5,20 +5,53 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title:"Article One Imad" ,
-    heading:"Article One" ,
-    date: "15 Aug, 2017 ",
-    content:`   <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+var articles = {
+    
+    articleOne:{
+    
+            title:"Article One Imad" ,
+             heading:"Article One" ,
+             date: "15 Aug, 2017 ",
+            content:`   <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
             This is the first html page.This is the first html page.This is the first html page.This is the first html page.
             </p>
-         <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
             This is the first html page.This is the first html page.This is the first html page.This is the first html page.
             </p>
              <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
             This is the first html page.This is the first html page.This is the first html page.This is the first html page.
             </p>
-        `
+        `},
+         articleTwo:{
+    
+            title:"Article Two Imad" ,
+             heading:"Article Two" ,
+             date: "15 Aug, 2017 ",
+            content:`   <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+            <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+             <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+        `},
+         articleThree:{
+    
+            title:"Article Three Imad" ,
+             heading:"Article Three" ,
+             date: "15 Aug, 2017 ",
+            content:`   <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+            <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+             <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+        `}
     
 };
 
@@ -63,15 +96,15 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+  res.send(createTemplate(articles.articleOne));
 });
 
 app.get('/article-two', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+   res.send(createTemplate(articles.articleTwo));
 });
 
 app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+  res.send(createTemplate(articles.articleThree));
 });
 
 app.get('/ui/style.css', function (req, res) {
