@@ -5,6 +5,23 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title:"Article One Imad" ,
+    heading:"Article One" ,
+    date: "15 Aug, 2017 ",
+    content:`   <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+         <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+             <p>This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            This is the first html page.This is the first html page.This is the first html page.This is the first html page.
+            </p>
+        `
+    
+};
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
